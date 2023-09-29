@@ -15,7 +15,7 @@
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 500px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
@@ -71,9 +71,13 @@
 			turn it around! 
 			*/
 			function update() {
-				
-
-			};
+			 	var newPositionX = 0;
+				moveBoxTo(newPositionX);
+			/* Your Variable Declaration HERE */
+			};	// When you first create the Variable...
+					var positionX = 0;
+						positionX = 0 + 10;
+						moveBoxTo(positionX);
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
