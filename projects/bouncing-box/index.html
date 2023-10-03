@@ -17,6 +17,12 @@
 			top: 100px;
 			left: 500px;  /* <--- Change me! */
 		}
+		body{
+            background: rgb(123, 155, 158);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: arial;
+		}
 		.board{
 			height: 100vh;
 		}
@@ -48,8 +54,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -62,9 +69,12 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
+			var boardHeight = jQuery(window).height();
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -72,12 +82,19 @@
 			*/
 			function update() {
 				positionX = positionX + speed;
-				moveBoxTo(positionX);
+				moveBoxTo(positionX, positionY);
 				if (positionX > boardWidth){
 					speed = speed * -1;
 				} 
 				if (positionX < 0){
 					speed = speed * -1;
+				}
+				positionY = positionY + speedY;
+				if (positionY > boardHeight){
+					speedY = speedY * -1;
+				} 
+				if (positionY < 0){
+					speedY = speedY * -1;
 				}
 			};			
 
@@ -88,17 +105,27 @@
 			*/
 			function handleBoxClick() {
 				positionX = 0;
+				positionY = 0;
 				// your code to increase the points variable by 1
 				points = points + 1
 				changeBoxText(points);
-				speed = speed + 3	
+				
 				//IF speed is a positive number:
     			//		add 3 to speed
 				//ELSE IF speed is a negative number:
     			//		subtract 3 from speed
 				if (speed > 0){
-					s
+					speed = speed + 3
 				} 
+				else if (speed < 0){
+					speed = speed - 3
+				}
+				if (speedY > 0){
+					speedY = speedY + 3
+				} 
+				else if (speedY < 0){
+					speedY = speedY - 3
+				}
 			};
 		})();
 	</script>
