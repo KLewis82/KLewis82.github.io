@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(6, 41, 17);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -16,10 +16,11 @@
 			position: absolute;
 			top: 100px;
 			left: 500px;  /* <--- Change me! */
+
 		}
 		body{
-            background: rgb(123, 155, 158);
-            color: rgb(45, 45, 45);
+            background: rgb(30, 12, 43);
+            color: rgb(83, 102, 0);
             padding: 10px;
             font-family: arial;
 		}
@@ -70,11 +71,13 @@
 			
 			// TODO 2 - Variable declarations 
 			var boardHeight = jQuery(window).height();
+			var randNum = Math.random() * 100;
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
 			var positionY = 0;
 			var speedY = 10;
+			var numOfClicks = 0;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -106,9 +109,17 @@
 			function handleBoxClick() {
 				positionX = 0;
 				positionY = 0;
+				numOfClicks = numOfClicks + 1
+				if (numOfClicks = 3){
+						speed = speed + 5
+						speedY = speedY + 5
+					}
 				// your code to increase the points variable by 1
 				points = points + 1
 				changeBoxText(points);
+				//Position changes to randum
+				positionX =  randNum = Math.random() * boardWidth;
+				positionY =  randNum = Math.random() * boardHeight;
 				
 				//IF speed is a positive number:
     			//		add 3 to speed
@@ -126,7 +137,8 @@
 				else if (speedY < 0){
 					speedY = speedY - 3
 				}
-			};
+				
+			}
 		})();
 	</script>
 </body>
