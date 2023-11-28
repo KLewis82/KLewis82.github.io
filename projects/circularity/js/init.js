@@ -62,6 +62,7 @@ var init = function (window) {
             game.checkCirclePosition(circles[2]);
             game.checkCirclePosition(circles[3]);
             game.checkCirclePosition(circles[4]);
+
             // TODO 9 : Iterate over the array
            
             
@@ -80,7 +81,9 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+            if (circle.x < canvas.width) //What side is x not comming back from and continueing to leave?
+            if 
+            if 
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
