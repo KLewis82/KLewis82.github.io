@@ -94,7 +94,6 @@ $(document).ready(function () {
     var repeat = currentShape["repeat"];
     handleBad (currentShape, repeat);
   }
-
   /////////////////////////////////////////////////
   // ALL OF YOUR CODE SHOULD GO ABOVE HERE ////////
   /////////////////////////////////////////////////
