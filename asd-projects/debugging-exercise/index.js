@@ -90,7 +90,7 @@ $(document).ready(function(){
         // to make seeing issues in the debugger slightly easier (in practice, you should use
         // circles.length, but do NOT change it here)
         for (var i = 0; i < maxCircles; i++){
-            var circle = circles[j];
+            var circle = circles[i];
 
             // move the circle
             moveCircle(circle);
@@ -142,7 +142,7 @@ $(document).ready(function(){
 
     // this redraws the circle's position on the screen
     function updateCircleOnScreen(circle){
-        maxCircles = 0;
+        maxCircles = 10;
 
         // these lines redraw the circle's position
         $(circle.id).css('left', circle.x);
