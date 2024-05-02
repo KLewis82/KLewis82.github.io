@@ -15,7 +15,7 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 async function bubbleSort(array){
-    for (var j = )
+    for (var j =   )
 }
 
 // TODO 3: Implement quickSort
@@ -26,7 +26,7 @@ async function bubbleSort(array){
 
 // TODO 1: Implement swap
 function swap(array, i, j){
-    let temp = array[i]
+    temp = array[i]
     array[i] = array[j];
     array[j] = temp
     drawSwap(array, i, j)
